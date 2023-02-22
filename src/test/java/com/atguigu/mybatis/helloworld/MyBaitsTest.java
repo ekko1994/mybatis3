@@ -67,6 +67,7 @@ public class MyBaitsTest {
             EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
             Employee empById = mapper.getEmpById(1);
             System.out.println(empById);
+
         }finally {
             sqlSession.close();
         }

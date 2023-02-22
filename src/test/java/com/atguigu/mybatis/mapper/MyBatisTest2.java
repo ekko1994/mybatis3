@@ -3,7 +3,6 @@ package com.atguigu.mybatis.mapper;
 import com.atguigu.mybatis.mapper.bean.Department;
 import com.atguigu.mybatis.mapper.bean.Employee;
 import com.atguigu.mybatis.mapper.dao.DepartmentMapper;
-import com.atguigu.mybatis.mapper.dao.EmployeeMapper;
 import com.atguigu.mybatis.mapper.dao.EmployeeMapperPlus;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -14,7 +13,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
 
 public class MyBatisTest2 {
     private SqlSessionFactory sqlSessionFactory = null;
@@ -43,7 +41,7 @@ public class MyBatisTest2 {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
             EmployeeMapperPlus mapper = sqlSession.getMapper(EmployeeMapperPlus.class);
-            Employee empAndDept = mapper.getEmpAndDept(6);
+            Employee empAndDept = mapper.getEmpAndDept(1);
             System.out.println(empAndDept);
         }finally {
             sqlSession.close();
@@ -55,7 +53,7 @@ public class MyBatisTest2 {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
             EmployeeMapperPlus mapper = sqlSession.getMapper(EmployeeMapperPlus.class);
-            Employee empByStep = mapper.getEmpByStep(6);
+            Employee empByStep = mapper.getEmpByStep(1);
             System.out.println(empByStep);
             System.out.println(empByStep.getDept());
         }finally {

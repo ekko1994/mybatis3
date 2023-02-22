@@ -15,22 +15,22 @@ public interface EmployeeMapper {
 
     //多条记录封装一个map
     @MapKey("id")
-    public Map<Integer, Employee> getEmpByLastNameLikeReturnMap(String lastName);
+    Map<Integer, Employee> getEmpByLastNameLikeReturnMap(String lastName);
 
     // 返回一条记录的map
-    public Map<String,Object> getEmpsByIdReturnMap(Integer id);
+    Map<String, Object> getEmpsByIdReturnMap(Integer id);
 
-    public List<Employee> getEmpsByLastName(String lastName);
+    List<Employee> getEmpsByLastName(String lastName);
 
-    public Employee getEmpByMap(Map<String,Object> map);
+    Employee getEmpByMap(Map<String, Object> map);
 
-    public Employee getEmpByIdAndLastName(@Param("id") Integer id, @Param("lastName") String lastName);
+    Employee getEmpByIdAndLastName(@Param("id") Integer id, @Param("lastName") String lastName);
 
-    public Employee getEmpById(Integer id);
+    Employee getEmpById(Integer id);
 
-    public Long addEmp(Employee employee);
+    Long addEmp(Employee employee);
 
-    public Boolean updateEmp(Employee employee);
+    Boolean updateEmp(Employee employee);
 
-    public void deleteEmpById(Integer id);
+    void deleteEmpById(Integer id);
 }

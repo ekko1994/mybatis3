@@ -19,11 +19,12 @@
         <id property="id" column="id"></id>
         <result property="lastName" column="last_name"/>
         <result property="gender" column="gender"/>
-        <result property="dept.id" column="did"></result>
+        <result property="email" column="email"/>
+        <result property="dept.id" column="id"></result>
         <result property="dept.departmentName" column="dept_name"/>
     </resultMap>
     <select id="getEmpAndDept" resultMap="myEmpAndDept2">
-        SELECT e.id id,e.last_name last_name,e.gender gender,e.d_id d_id,
+        SELECT e.id id,e.last_name last_name,e.gender gender,e.d_id d_id,e.email email,
 		d.id did,d.dept_name dept_name FROM tbl_employee e,tbl_dept d
 		WHERE e.d_id=d.id AND e.id=#{id}
     </select>
@@ -32,8 +33,9 @@
         <id property="id" column="id"></id>
         <result property="lastName" column="last_name"/>
         <result property="gender" column="gender"/>
+        <result property="email" column="email"/>
         <association property="dept" javaType="com.atguigu.mybatis.mapper.bean.Department">
-            <id property="id" column="did"></id>
+            <id property="id" column="id"></id>
             <result property="departmentName" column="dept_name"></result>
         </association>
     </resultMap>

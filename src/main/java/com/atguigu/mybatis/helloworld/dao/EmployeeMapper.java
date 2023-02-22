@@ -8,5 +8,5 @@ import com.atguigu.mybatis.helloworld.bean.Employee;
  */
 public interface EmployeeMapper {
 
-    public Employee getEmpById(Integer id);
+    Employee getEmpById(Integer id);
 }

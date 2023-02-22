@@ -10,11 +10,11 @@ import java.util.List;
  */
 public interface EmployeeMapperPlus {
 
-    public Employee getEmpById(Integer id);
+    Employee getEmpById(Integer id);
 
-    public Employee getEmpAndDept(Integer id);
+    Employee getEmpAndDept(Integer id);
 
-    public Employee getEmpByStep(Integer id);
+    Employee getEmpByStep(Integer id);
 
-    public List<Employee> getEmpsByDeptId(Integer deptId);
+    List<Employee> getEmpsByDeptId(Integer deptId);
 }

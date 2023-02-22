@@ -11,8 +11,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -38,13 +36,13 @@ public class MyBaitsTest {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
             EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
-            Employee employee = new Employee("tom","tom@163.com","0");
-            mapper.addEmp(employee);
-            System.out.println(employee.getId());
-//            Employee employee = new Employee(3,"jerry","jerry@163.com","1");
-//            Boolean aBoolean = mapper.updateEmp(employee);
-//            System.out.println(aBoolean);
-//            mapper.deleteEmpById(1);
+            //Employee employee = new Employee("tom","tom@163.com","0");
+            //mapper.addEmp(employee);
+            //System.out.println(employee.getId());
+            //Employee employee = new Employee(3,"jerry","jerry@163.com","1");
+            //Boolean aBoolean = mapper.updateEmp(employee);
+            //System.out.println(aBoolean);
+            mapper.deleteEmpById(1);
             sqlSession.commit();
         }finally {
             sqlSession.close();
